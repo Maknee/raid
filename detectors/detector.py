@@ -10,7 +10,7 @@ from .models.originality_ai.originality_ai import OriginalityAI
 from .models.radar.radar import Radar
 from .models.winston_ai.winston_ai import WinstonAI
 from .models.zerogpt.zerogpt import ZeroGPT
-
+from .models.mage.mage import Mage
 
 class Detector:
     """Shared interface for all detectors"""
@@ -50,5 +50,7 @@ def get_detector(detector_name: str) -> Detector:
         return OriginalityAI()
     elif detector_name == "binoculars":
         return Binoculars()
+    elif detector_name == "mage":
+        return Mage()
     else:
         raise ValueError("Invalid detector name")
